@@ -43,7 +43,7 @@ def ashkeebsStatCode():
         ashGauge = Gauge('AshStatusCode', 'status code of ashkeebs', registry=ashRegistry)
         statusCode = str(ashkeebsStatus.status_code)
         ashGauge.set(statusCode)
-        push_to_gateway('blastoise.midgard.local:9091', job='web_status', registry=ashRegistry)
+        push_to_gateway('prometheushost.local:9091', job='web_status', registry=ashRegistry)
 ashkeebsStatCode()
 
 def ashkeebsFun():
